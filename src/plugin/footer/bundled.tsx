@@ -4,9 +4,9 @@ import { Button, CircularProgress } from '@mui/material';
 import SaveIcon from '@mui/icons-material/Save';
 import SettingsBackupRestoreIcon from '@mui/icons-material/SettingsBackupRestore';
 
-import ImportButton from './import-button';
-import ExportButton from './export-button';
-import ResetButton from './reset-button';
+import { PluginConfigImportButton } from './import-button';
+import { PluginConfigExportButton } from './export-button';
+import { PluginConfigResetButton } from './reset-button';
 
 type ContainerProps = {
   loading?: boolean;
@@ -56,12 +56,18 @@ const Component: FC<Props & { className?: string }> = (props) => (
     </div>
     <div>
       {props.onExportButtonClick && (
-        <ExportButton onExportButtonClick={props.onExportButtonClick} loading={props.loading} />
+        <PluginConfigExportButton
+          onExportButtonClick={props.onExportButtonClick}
+          loading={props.loading}
+        />
       )}
       {props.onImportButtonClick && (
-        <ImportButton onImportButtonClick={props.onImportButtonClick} loading={props.loading} />
+        <PluginConfigImportButton
+          onImportButtonClick={props.onImportButtonClick}
+          loading={props.loading}
+        />
       )}
-      {props.reset && <ResetButton reset={props.reset} />}
+      {props.reset && <PluginConfigResetButton reset={props.reset} />}
     </div>
   </div>
 );
@@ -108,4 +114,4 @@ const Container: FC<ContainerProps> = (props) => {
   );
 };
 
-export const PluginFooter = Container;
+export const PluginFooterBundle = Container;

@@ -14,4 +14,4 @@ const Component: FC<Props> = ({ onExportButtonClick, loading }) => {
   );
 };
 
-export default memo(Component);
+export const PluginConfigExportButton = memo(Component);

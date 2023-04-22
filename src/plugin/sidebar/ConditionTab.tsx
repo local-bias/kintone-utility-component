@@ -17,4 +17,4 @@ const Component: FC<PropsWithChildren<Props>> = ({ index, children, ...tabProps 
   );
 };
 
-export default Component;
+export const PluginConditionTab = Component;

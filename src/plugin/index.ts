@@ -1,4 +1,4 @@
-export * from './footer';
+export * from './footer/bundled';
 export * from './layout';
 export * from './banner';
 export * from './sidebar';

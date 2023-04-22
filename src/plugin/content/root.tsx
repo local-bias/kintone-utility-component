@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
 
-export default styled.div`
+export const PluginContent = styled.div`
   grid-area: content;
 `;

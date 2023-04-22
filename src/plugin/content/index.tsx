@@ -1,1 +1,1 @@
-export { default as PluginContentLayout } from './layout';
+export * from './root';

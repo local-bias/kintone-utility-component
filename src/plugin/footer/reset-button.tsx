@@ -56,4 +56,4 @@ const Component: FC<Props> = ({ reset }) => {
   );
 };
 
-export default memo(Component);
+export const PluginConfigResetButton = memo(Component);

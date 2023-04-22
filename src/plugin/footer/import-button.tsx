@@ -15,4 +15,4 @@ const Component: FC<Props> = ({ onImportButtonClick, loading }) => {
   );
 };
 
-export default memo(Component);
+export const PluginConfigImportButton = memo(Component);

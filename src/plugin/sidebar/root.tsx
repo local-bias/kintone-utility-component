@@ -43,4 +43,4 @@ const StyledComponent = styled(Component)`
   }
 `;
 
-export default StyledComponent;
+export const PluginSidebar = StyledComponent;

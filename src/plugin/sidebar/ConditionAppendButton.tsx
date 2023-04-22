@@ -17,4 +17,4 @@ const Component: FC<Props> = ({ onClick }) => (
   </Button>
 );
 
-export default memo(Component);
+export const PluginConditionAppendButton = memo(Component);

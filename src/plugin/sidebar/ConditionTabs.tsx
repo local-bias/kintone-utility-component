@@ -37,4 +37,4 @@ const StyledComponent = styled(Component)`
   }
 `;
 
-export default StyledComponent;
+export const PluginConditionTabs = StyledComponent;

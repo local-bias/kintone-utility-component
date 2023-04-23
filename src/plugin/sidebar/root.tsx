@@ -23,23 +23,6 @@ const StyledComponent = styled(Component)`
     flex-direction: column;
     align-items: stretch;
     border-right: 1px solid #0001;
-    .tabs {
-      overflow: hidden;
-      &:hover {
-        overflow: auto;
-      }
-      &::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
-      }
-      &::-webkit-scrollbar-thumb {
-        background-color: #0004;
-        border-radius: 4px;
-      }
-      &::-webkit-scrollbar-track {
-        background-color: transparent;
-      }
-    }
   }
 `;
 

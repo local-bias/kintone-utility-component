@@ -1,18 +1,36 @@
 import styled from '@emotion/styled';
 
-export const PluginLayout = styled.div<{ singleCondition?: boolean }>`
+type Props = { singleCondition?: boolean; disableBanner?: boolean };
+
+const gridTemplate = (row: string[][]) => {
+  return `grid-template: '${row.map(([name]) => name).join(' ')}' minmax(600px, 1fr) '${new Array(
+    row.length
+  )
+    .fill('footer')
+    .join(' ')}' auto/${row.map(([_, size]) => size).join(' ')};`;
+};
+
+export const PluginLayout = styled.div<Props>`
   display: grid;
   gap: 16px;
 
-  grid-template: ${({ singleCondition }) =>
-    singleCondition
-      ? `'content banner' minmax(600px, 1fr) 'footer footer' auto/1fr 300px`
-      : `'sidebar content' minmax(600px, 1fr) 'footer footer' auto/300px 1fr`};
+  ${(props) => {
+    const { singleCondition = false, disableBanner = false } = props;
 
-  @media (min-width: 1520px) {
-    grid-template: ${({ singleCondition }) =>
-      singleCondition
-        ? `'content banner' minmax(600px, 1fr) 'footer footer' auto/1fr 300px`
-        : `'sidebar content banner' minmax(600px, 1fr) 'footer footer footer' auto/300px 1fr 300px`};
-  }
+    const row: string[][] = [];
+    if (!singleCondition) {
+      row.push(['sidebar', '300px']);
+    }
+    row.push(['content', '1fr']);
+
+    let result = gridTemplate(row);
+
+    if (!disableBanner) {
+      row.push(['banner', '300px']);
+    }
+
+    result += `@media (min-width: 1520px) {${gridTemplate(row)}}`;
+
+    return result;
+  }}
 `;

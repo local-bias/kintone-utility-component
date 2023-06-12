@@ -79,7 +79,7 @@ const StyledComponent = styled(Component)`
   justify-content: space-between;
 
   position: sticky;
-  bottom: 15px;
+  bottom: 0;
   margin-top: 20px;
   background-color: #fff;
   border-top: 1px solid #eee;

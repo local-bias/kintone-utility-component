@@ -14,8 +14,9 @@ const Component: FC<Props & { className?: string }> = ({ url, className }) => (
 const StyledComponent = styled(Component)`
   grid-area: banner;
 
+  display: none;
   @media (min-width: 1520px) {
-    display: none;
+    display: block;
   }
 
   .sticky {
